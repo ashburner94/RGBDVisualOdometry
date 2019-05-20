@@ -1,9 +1,9 @@
 #ifndef ENVIRONMENT_MODEL_H
 #define ENVIRONMENT_MODEL_H
 
+#include <pcl/search/kdtree.h>
 #include <Eigen/Core>
 #include <Eigen/Geometry>
-#include <pcl/search/kdtree.h>
 
 #include "../include/icp_mg.h"
 #include "../include/mg_feature.h"

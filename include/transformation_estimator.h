@@ -5,8 +5,8 @@
 #include <pcl/registration/correspondence_rejection_median_distance.h>
 #include <pcl/registration/correspondence_rejection_one_to_one.h>
 
-#include "mg_feature.h"
 #include "environment_model.h"
+#include "mg_feature.h"
 
 class TransformationEstimator {
  public:

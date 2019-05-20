@@ -1,12 +1,12 @@
 #include "../include/rgbd_visual_odometry_node.h"
 #include "../include/get_param.hpp"
 
+#include <cv_bridge/cv_bridge.h>
 #include <geometry_msgs/TransformStamped.h>
 #include <nav_msgs/Odometry.h>
+#include <pcl_conversions/pcl_conversions.h>
 #include <std_msgs/Float64.h>
 #include <tf2_eigen/tf2_eigen.h>
-#include <cv_bridge/cv_bridge.h>
-#include <pcl_conversions/pcl_conversions.h>
 
 RGBDVisualOdometryNode::RGBDVisualOdometryNode(ros::NodeHandle nh)
     : tf_listener_(tf_buffer_),

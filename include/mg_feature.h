@@ -2,15 +2,15 @@
 #define MG_FEATURE_H
 
 #define PCL_NO_PRECOMPILE
-#include <pcl/pcl_base.h>
-#include <pcl/impl/pcl_base.hpp>
-#include <pcl/point_types.h>
-#include <pcl/impl/point_types.hpp>
-#include <pcl/registration/icp.h>
-#include <pcl/registration/impl/icp.hpp>
 #include <pcl/kdtree/kdtree_flann.h>
-#include <pcl/kdtree/impl/kdtree_flann.hpp>
+#include <pcl/pcl_base.h>
+#include <pcl/point_types.h>
+#include <pcl/registration/icp.h>
 #include <pcl/search/kdtree.h>
+#include <pcl/impl/pcl_base.hpp>
+#include <pcl/impl/point_types.hpp>
+#include <pcl/kdtree/impl/kdtree_flann.hpp>
+#include <pcl/registration/impl/icp.hpp>
 #include <pcl/search/impl/kdtree.hpp>
 
 namespace pcl {
@@ -56,7 +56,7 @@ struct MGFeature {
   // Align new allocator
   EIGEN_MAKE_ALIGNED_OPERATOR_NEW
 } EIGEN_ALIGN16;
-}
+}  // namespace pcl
 
 // Register the new point type
 POINT_CLOUD_REGISTER_POINT_STRUCT(

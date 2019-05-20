@@ -45,13 +45,13 @@ void TransformationEstimator::estimateTransformation(
     transformed_data->clear();
     throw std::runtime_error("Translation delta out of range.");
   }
-  if (std::min(1.0,
-               std::max(-1.0,
-                        std::acos(
-                            ((tf_estimate.pose.rotation() *
-                              tf_initial_guess.rotation().transpose()).trace() -
-                             1.0) /
-                            2.0))) > params_.max_rotation_delta) {
+  if (std::min(
+          1.0,
+          std::max(-1.0, std::acos(((tf_estimate.pose.rotation() *
+                                     tf_initial_guess.rotation().transpose())
+                                        .trace() -
+                                    1.0) /
+                                   2.0))) > params_.max_rotation_delta) {
     transformed_data->clear();
     throw std::runtime_error("Rotation delta out of range.");
   }

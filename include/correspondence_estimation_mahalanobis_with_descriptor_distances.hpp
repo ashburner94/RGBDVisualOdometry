@@ -90,11 +90,11 @@ void pcl::registration::
           cv::norm(desc_source, desc_target, cv::NORM_HAMMING);
       Eigen::Vector3f delta =
           point.getVector3fMap() - target_->at(index[i]).getVector3fMap();
-      double mahalanobis_distance =
-          std::sqrt(delta.transpose() *
-                    (point.getSigmaMatrix3f() +
-                     target_->at(index[i]).getSigmaMatrix3f()).inverse() *
-                    delta);
+      double mahalanobis_distance = std::sqrt(
+          delta.transpose() *
+          (point.getSigmaMatrix3f() + target_->at(index[i]).getSigmaMatrix3f())
+              .inverse() *
+          delta);
 
       // Mix the distances
       double weight = std::pow(alpha_, iteration_counter_);

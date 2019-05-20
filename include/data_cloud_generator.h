@@ -1,8 +1,11 @@
 #ifndef DATA_CLOUD_GENERATOR_H
 #define DATA_CLOUD_GENERATOR_H
 
+// include order matters at this point
+// clang-format off
 #include "../include/mg_feature.h"
 #include <opencv2/opencv.hpp>
+// clang-format on
 
 class DataCloudGenerator {
  public:
@@ -39,9 +42,8 @@ class DataCloudGenerator {
   typedef struct {
     cv::Mat greyscale; /*!< Measurement from the greyscale sensor. */
     cv::Mat depth;     /*!< Measurement from the depth sensor. */
-    Eigen::Affine3d
-        tf_image_to_base; /*!< Transformation from the camera image to the
-                             base_link */
+    Eigen::Affine3d tf_image_to_base; /*!< Transformation from the camera image
+                                         to the base_link */
     IntrinsicParams
         intrinsic_params; /*!< Intrinsic parameters of the camera. */
   } CameraMeasurement;

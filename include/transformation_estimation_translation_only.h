@@ -1,8 +1,8 @@
 #ifndef PCL_REGISTRATION_TRANSFORMATION_ESTIMATION_TRANSLATION_ONLY_H_
 #define PCL_REGISTRATION_TRANSFORMATION_ESTIMATION_TRANSLATION_ONLY_H_
 
-#include <pcl/registration/transformation_estimation.h>
 #include <pcl/cloud_iterator.h>
+#include <pcl/registration/transformation_estimation.h>
 
 namespace pcl {
 namespace registration {
@@ -17,9 +17,11 @@ class TransformationEstimationTranslationOnly
     : public TransformationEstimation<PointSource, PointTarget, Scalar> {
  public:
   typedef boost::shared_ptr<TransformationEstimationTranslationOnly<
-      PointSource, PointTarget, Scalar> > Ptr;
+      PointSource, PointTarget, Scalar> >
+      Ptr;
   typedef boost::shared_ptr<const TransformationEstimationTranslationOnly<
-      PointSource, PointTarget, Scalar> > ConstPtr;
+      PointSource, PointTarget, Scalar> >
+      ConstPtr;
   typedef typename TransformationEstimation<PointSource, PointTarget,
                                             Scalar>::Matrix4 Matrix4;
   /**
@@ -97,8 +99,8 @@ class TransformationEstimationTranslationOnly
                                    ConstCloudIterator<PointTarget> &target_it,
                                    Matrix4 &transformation_matrix) const;
 };
-}
-}
+}  // namespace registration
+}  // namespace pcl
 
 #include "transformation_estimation_translation_only.hpp"
 
