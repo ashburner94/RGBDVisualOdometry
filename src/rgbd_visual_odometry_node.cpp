@@ -39,7 +39,7 @@ RGBDVisualOdometryNode::RGBDVisualOdometryNode(ros::NodeHandle nh)
 
   // Activate the parameter getter timer
   get_params_timer_ =
-      nh_.createTimer(ros::Duration(2.0), [this](const ros::TimerEvent& event) {
+      nh_.createTimer(ros::Duration(2.0), [this](const ros::TimerEvent&) {
         // Get and set the parameters of the visual odometry
         getParams();
         visual_odometry_->setParams(params_);
