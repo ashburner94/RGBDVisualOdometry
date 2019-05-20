@@ -4,7 +4,7 @@ cmake_minimum_required(VERSION 2.8.3)
 set (CMAKE_CXX_STANDARD 11)
 
 ## Treat all warnings as errors
-add_compile_options(-Werror -Wall)
+add_compile_options(-Werror -Wall -Wextra -Wno-deprecated-declarations)
 
 ## Turn on compile time optimizations
 if(${CMAKE_BUILD_TYPE} MATCHES "Release")
