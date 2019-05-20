@@ -71,11 +71,11 @@ void pcl::registration::CorrespondenceEstimationMahalanobis<
     for (int i = 0; i < (int)index.size(); i++) {
       Eigen::Vector3f delta =
           point.getVector3fMap() - target_->at(index[i]).getVector3fMap();
-      distance[i] =
-          std::sqrt(delta.transpose() *
-                    (point.getSigmaMatrix3f() +
-                     target_->at(index[i]).getSigmaMatrix3f()).inverse() *
-                    delta);
+      distance[i] = std::sqrt(
+          delta.transpose() *
+          (point.getSigmaMatrix3f() + target_->at(index[i]).getSigmaMatrix3f())
+              .inverse() *
+          delta);
     }
   }
 }

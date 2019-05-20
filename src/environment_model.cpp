@@ -21,8 +21,9 @@ EnvironmentModel::EnvironmentModel(EnvironmentModelParams& params,
 void EnvironmentModel::updateEnvironmentModel(
     MGFeatureCloudPtr transformed_data) {
   // Determine the correspondences
-  pcl::registration::CorrespondenceEstimationMahalanobis<
-      MGFeature, MGFeature, float> correspondence_estimation;
+  pcl::registration::CorrespondenceEstimationMahalanobis<MGFeature, MGFeature,
+                                                         float>
+      correspondence_estimation;
   correspondence_estimation.setInputSource(transformed_data);
   correspondence_estimation.setInputTarget(environment_model);
   correspondence_estimation.setSearchMethodTarget(tree, true);
@@ -49,7 +50,8 @@ void EnvironmentModel::updateEnvironmentModel(
                           (environment_model->at(correspondence_it->index_match)
                                .getSigmaMatrix3f() +
                            transformed_data->at(correspondence_it->index_query)
-                               .getSigmaMatrix3f()).inverse();
+                               .getSigmaMatrix3f())
+                              .inverse();
       // Means
       environment_model->at(correspondence_it->index_match).getVector3fMap() =
           environment_model->at(correspondence_it->index_match)

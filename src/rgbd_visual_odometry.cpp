@@ -1,7 +1,7 @@
 #include "../include/rgbd_visual_odometry.h"
 
-#include <vector>
 #include <opencv2/features2d/features2d.hpp>
+#include <vector>
 
 RGBDVisualOdometry::RGBDVisualOdometry(RGBDVisualOdometryParams& params)
     : is_reset(true) {

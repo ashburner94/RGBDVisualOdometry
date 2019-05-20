@@ -2,9 +2,9 @@
 #define PCL_ICP_MG_H
 
 #include <pcl/registration/icp.h>
-#include "transformation_estimation_translation_only.h"
 #include "correspondence_estimation_mahalanobis.h"
 #include "correspondence_estimation_mahalanobis_with_descriptor_distances.h"
+#include "transformation_estimation_translation_only.h"
 
 namespace pcl {
 /** \brief @b IterativeClosestMahalanobis is an ICP variant that uses the
@@ -25,10 +25,12 @@ class IterativeClosestPointMixedGaussian
   using Registration<PointSource, PointTarget, Scalar>::correspondences_;
 
  public:
-  typedef boost::shared_ptr<IterativeClosestPointMixedGaussian<
-      PointSource, PointTarget, Scalar> > Ptr;
+  typedef boost::shared_ptr<
+      IterativeClosestPointMixedGaussian<PointSource, PointTarget, Scalar> >
+      Ptr;
   typedef boost::shared_ptr<const IterativeClosestPointMixedGaussian<
-      PointSource, PointTarget, Scalar> > ConstPtr;
+      PointSource, PointTarget, Scalar> >
+      ConstPtr;
 
   typedef
       typename Registration<PointSource, PointTarget, Scalar>::Matrix4 Matrix4;
@@ -57,6 +59,6 @@ class IterativeClosestPointMixedGaussian
    */
   Correspondences getCorrespondences() { return *correspondences_; }
 };
-}
+}  // namespace pcl
 
 #endif /*PCL_ICP_MG_H*/

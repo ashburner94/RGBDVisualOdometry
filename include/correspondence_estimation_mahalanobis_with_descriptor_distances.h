@@ -9,8 +9,8 @@ namespace registration {
 /** @brief CorrespondenceEstimationMahalanobisWithDescriptorDistances computes
  * correspondences by using
  * the mahalanobis distance
-  * as a distance measure.
-  */
+ * as a distance measure.
+ */
 template <typename PointSource, typename PointTarget, typename Scalar = float>
 class CorrespondenceEstimationMahalanobisWithDescriptorDistances
     : public CorrespondenceEstimationBase<PointSource, PointTarget, Scalar> {
@@ -33,10 +33,12 @@ class CorrespondenceEstimationMahalanobisWithDescriptorDistances
 
   typedef boost::shared_ptr<
       CorrespondenceEstimationMahalanobisWithDescriptorDistances<
-          PointSource, PointTarget, Scalar> > Ptr;
+          PointSource, PointTarget, Scalar> >
+      Ptr;
   typedef boost::shared_ptr<
       const CorrespondenceEstimationMahalanobisWithDescriptorDistances<
-          PointSource, PointTarget, Scalar> > ConstPtr;
+          PointSource, PointTarget, Scalar> >
+      ConstPtr;
   /**
    * @brief Empty constructor.
    */
@@ -44,18 +46,18 @@ class CorrespondenceEstimationMahalanobisWithDescriptorDistances
       : num_search_points_(4), iteration_counter_(1), alpha_(0.5) {}
   /** @brief Computes the correspondences, applying a maximum mahalanobis
    * distance threshold.
-    * @param correspondences Correspondence object.
-    * @param[in] max_distance Mahalanobis distance threshold above which
+   * @param correspondences Correspondence object.
+   * @param[in] max_distance Mahalanobis distance threshold above which
    * correspondences will be rejected.
-    */
+   */
   void determineCorrespondences(Correspondences& correspondences,
                                 double max_distance);
   /** @brief Computes the correspondences, applying a maximum Euclidean distance
    * threshold.
-    * @param correspondences Correspondences object.
-    * @param[in] max_distance Euclidean distance threshold above which
+   * @param correspondences Correspondences object.
+   * @param[in] max_distance Euclidean distance threshold above which
    * correspondences will be rejected
-    */
+   */
   void determineReciprocalCorrespondences(Correspondences& correspondences,
                                           double max_distance);
   /** \brief Clone and cast to CorrespondenceEstimationBase */
@@ -63,7 +65,7 @@ class CorrespondenceEstimationMahalanobisWithDescriptorDistances
       CorrespondenceEstimationBase<PointSource, PointTarget, Scalar> >
   clone() const {
     Ptr copy(new CorrespondenceEstimationMahalanobisWithDescriptorDistances<
-        PointSource, PointTarget, Scalar>(*this));
+             PointSource, PointTarget, Scalar>(*this));
     return (copy);
   }
   /**
@@ -97,8 +99,8 @@ class CorrespondenceEstimationMahalanobisWithDescriptorDistances
    */
   double alpha_;
 };
-}
-}
+}  // namespace registration
+}  // namespace pcl
 
 #include "correspondence_estimation_mahalanobis_with_descriptor_distances.hpp"
 

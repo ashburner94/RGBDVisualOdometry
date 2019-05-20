@@ -4,10 +4,10 @@
 // Include order matters at this point.
 // OpenCV leaks defines into the pcl lib.
 // Shame on you OpenCV :(
-#include "mg_feature.h"
-#include "icp_mg.h"
-#include "environment_model.h"
 #include "data_cloud_generator.h"
+#include "environment_model.h"
+#include "icp_mg.h"
+#include "mg_feature.h"
 #include "transformation_estimator.h"
 
 #include <Eigen/Core>
